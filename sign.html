@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign.css">
+    <link href=
+'https://fonts.googleapis.com/css?family=Sofia'
+        rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-jDU6e2v5z5U5g5N5z5HG1v5X9O5p6U5O6U5l6e5v5a5E5z5M5z5j5v5G5v5H5z5y5x5y5v5A5w5b5j5q5e5p5o5g=="
+        crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <section class="header">
+        <nav id="navbar">
+
+            <a href="#"> <img src="img/logo.png" alt=""> </a>
+
+            <div class="navlinks">
+                <li class="links"> <a href="index.html">Home</a> </li>
+                <li class="links"> <a href="shop.html">Shop</a> </li>
+                <li class="links"> <a href="blog.html">Blog</a> </li>
+                <li class="links"> <a href="contact.html">Contact</a> </li>
+                <li class="links"> <a class="active" href="sign.html">Signup</a> </li>
+                <li class="links"> <a href="cart.html"> <i class="fa-solid fa-cart-shopping"></i> </a> </li>
+            </div>
+        </nav>
+    </section>
+
+    <section class="container">
+    <div class="formcontainer">
+        <input type="email" name="email" id="email" placeholder="Email" required>
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="date" name="dob" id="dob" placeholder="Date-Of-Birth">
+        <p id="para-alert" style= font-size:small;"> Register yourself here !</p> 
+
+        <div class="btn-field">
+            <button id="signup" onclick="signup()">SIGNUP</button>
+            <button id="signin" onclick="signin()">SIGNIN</button>
+        </div>
+
+        
+    </div>
+
+
+</section>
+
+
+<script >
+
+userAndPass ={
+    user1:"hello",
+    user2: "world",
+    host:"changeme",
+}
+
+function signin(){
+    document.getElementById("email").style.display = "none";
+    document.getElementById("dob").style.display = "none";
+
+    if( (document.getElementById("username").value != "")&& (password = document.getElementById("password").value!="")){
+        let username = document.getElementById("username").value
+        let password = document.getElementById("password").value
+
+    for(item in userAndPass){
+        if ((username === item) && (password == userAndPass[item])){
+            console.log(item)
+            console.log(userAndPass[item])
+            location.href='index.html';
+        }
+    }
+    }
+
+}
+
+function signup(){
+    document.getElementById("email").style.display = "block";
+
+    let username = document.getElementById("username").value
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value
+
+    if( (document.getElementById("username").value != "") && (email = document.getElementById("email").value != "") && (password = document.getElementById("password").value!="")){
+        for(item in userAndPass){
+        if (username === item){
+            document.getElementById("para-alert").innerHTML="User is already registered ! "
+            document.getElementById("para-alert").style.color="red";
+        }
+        else{
+            userAndPass[username] = document.getElementById("password").value
+        }
+    }
+   
+    document.getElementById("username").value=""
+    document.getElementById("email").value=""
+    document.getElementById("password").value=""
+    }
+    
+}
+
+
+
+
+
+
+
+// function locate(){
+//     if( (document.getElementById("username").value != "") && (email = document.getElementById("email").value != "") && (password = document.getElementById("password").value!="")){
+//         location.href = "index.html";
+//     }
+// }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("img/contactbg.webp");
+    background-size: cover;
+    font-family: Sofia,sans-serif;
+}
+
+.header{
+    z-index: 999;
+    position: sticky;
+    top:0;
+    left:0;
+}
+
+h1{
+    font-size: 2em;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: beige;
+}
+
+.links{
+    list-style: none;
+    display: inline;
+}
+
+.links a{
+    text-decoration: none;
+    color:black;
+    font-size: large;
+    font-weight: bold;
+    margin-right:1em;
+    transition:0.3s ease;
+}
+
+.links a:hover{
+    color:rgb(56, 165, 129);
+}
+
+.links a.active{
+    color:rgb(56, 165, 129);
+} 
+
+#content{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height:90vh;
+}
+
+.left{
+    position: relative;
+    animation: slidedetails 2s ease-out 0s 1 normal forwards;
+}
+
+.left span{
+color:yellow;
+    line-height:4em;
+    font-size: large;
+    margin: 0 0 0 10px;
+}
+
+#form{
+    float:right;
+    position: relative;
+    animation: slideform 2s ease-out 0s 1 normal forwards;
+}
+
+#form input, textarea{
+    display: block;
+    width:24vw;
+    min-height:30px;
+    padding:3%;
+    margin:2%;
+    border: none;
+    background-color: black;
+    color:white;
+}
+
+#form button{
+    display: block;
+    background-color: black;
+    color:white;
+    font-weight:bold;
+    border:none;
+    padding: 3%;
+    margin:20px 20px 0px 12px;
+    cursor:pointer;
+}
+
+@keyframes slideform{
+    0%{
+        right:-30%;
+    }
+    100%{
+        right:15%;
+    }
+}
+
+@keyframes slidedetails{
+    0%{
+        left:-25%;
+    }
+    100%{
+        left:10%;
+    }
+}
+
